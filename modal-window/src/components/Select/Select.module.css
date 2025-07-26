@@ -1,0 +1,36 @@
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.labelText {
+    color: #8a8fa8;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    border: 1px solid #c4c7d4;
+    border-radius: 8px;
+}
+
+.optionsWrapper {
+    border: 1px solid #c4c7d4;
+    border-radius: 8px;
+}
+
+.option {
+    padding: 6px 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
