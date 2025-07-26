@@ -1,0 +1,27 @@
+.inviteForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    padding: 6px 12px;
+    border: 1px solid #c4c7d4;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.input::placeholder {
+    color: #8a8fa8;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 143%;
+}
+
+.labelText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}

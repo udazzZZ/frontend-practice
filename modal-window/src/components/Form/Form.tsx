@@ -1,13 +1,28 @@
+import { useState } from "react";
 import addButton from "../../assets/add-button.svg";
 import { Select } from "../Select/Select";
 import styles from "./Form.module.css";
+import { InviteBlockForm, type Invite } from "../InviteForm/InviteForm";
 
 export const Form = () => {
+    const [invites, setInvites] = useState<Invite[]>([]);
     const options = [
         { value: "1", label: "Первый вариант" },
         { value: "2", label: "Второй вариант" },
         { value: "3", label: "Третий вариант" },
     ];
+
+    const onClickButtonHandler = () => {
+        if (invites.length < 3) {
+            const newInvite: Invite = {
+                name: "",
+                email: "",
+                phone: "",
+            };
+
+            setInvites((prev) => [...prev, newInvite]);
+        }
+    };
 
     return (
         <form className={styles.form}>
@@ -56,10 +71,24 @@ export const Form = () => {
                     placeholder="+7 777 777 77 77"
                 ></input>
             </div>
-            <button className={styles.addButton}>
-                <img src={addButton}></img>
-                <p>Добавить друга</p>
-            </button>
+            {invites.length < 3 && (
+                <button
+                    className={styles.addButton}
+                    type="button"
+                    onClick={onClickButtonHandler}
+                >
+                    <img src={addButton}></img>
+                    <p>Добавить друга</p>
+                </button>
+            )}
+            {invites.map((invite, index) => (
+                <InviteBlockForm
+                    data={invite}
+                    index={index}
+                    key={index}
+                    setInvites={setInvites}
+                />
+            ))}
             <div className={styles.inputWrapper}>
                 <p className={styles.labelText}>
                     Предпочитаемый вид связи{" "}
