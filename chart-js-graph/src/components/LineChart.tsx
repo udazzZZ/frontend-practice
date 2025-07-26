@@ -29,7 +29,7 @@ export const LineChart = () => {
             {
                 label: "Количество кофе ☕",
                 data: [1, 3, 2, 5, 4],
-                borderColor: "rgb(75, 192, 192)",
+                borderColor: "rgba(107, 83, 151, 1)",
                 tension: 0.3,
             },
         ],
